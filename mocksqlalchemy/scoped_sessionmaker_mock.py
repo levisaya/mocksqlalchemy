@@ -5,7 +5,7 @@ class ScopedSessionmakerMock(object):
     def __init__(self, *args, **kwargs):
         self.engine = kwargs['bind']
         self.args = args
-        self.kwargs = kwargs
+        self.kwargs = {k: v for k, v in kwargs.items() if k != 'bind'}
         self.connection = self.engine.connect()
         self.transaction = self.connection.begin()
         self.nested_transaction = None
