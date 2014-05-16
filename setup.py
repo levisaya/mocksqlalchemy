@@ -4,7 +4,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 setup(name='mocksqlalchemy',
-      version='0.1.1',
+      version='0.1.2',
       description='',
       author='Andy Levisay',
       author_email='levisaya@gmail.com',

@@ -29,9 +29,8 @@ class TestScopedSessionMock(unittest.TestCase):
 
     def test_rollback(self):
         sm = ScopedSessionmakerMock(bind=self.engine)
-        session = sm()
+        session = sm(autocommit=True)
         session.add(User(name='derp'))
-        session.commit()
         results = session.query(User)
         self.assertEqual(results.count(), 1)
         session.close()

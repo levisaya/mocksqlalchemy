@@ -6,12 +6,13 @@ class ScopedSessionmakerMock(object):
         self.engine = kwargs['bind']
         self.args = args
         self.kwargs = {k: v for k, v in kwargs.items() if k != 'bind'}
+        self.nested_transaction = None
         self.connection = self.engine.connect()
         self.transaction = self.connection.begin()
-        self.nested_transaction = None
 
-    def __call__(self):
+    def __call__(self, **kwargs):
         self.nested_transaction = self.connection.begin_nested()
+        self.kwargs.update(kwargs)
         return Session(self.connection, *self.args, **self.kwargs)
 
     def __del__(self):
