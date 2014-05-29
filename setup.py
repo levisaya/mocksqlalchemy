@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 setup(name='mocksqlalchemy',
       version='0.1.2',
-      description='',
+      description='A collection of mocks for unit testing code using the SQLAlchemy library.',
       author='Andy Levisay',
       author_email='levisaya@gmail.com',
       url='https://github.com/levisaya/mocksqlalchemy',
