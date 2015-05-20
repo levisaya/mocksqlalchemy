@@ -9,7 +9,7 @@ setup(name='mocksqlalchemy',
       author='Andy Levisay',
       author_email='levisaya@gmail.com',
       url='https://github.com/levisaya/mocksqlalchemy',
-      download='https://github.com/levisaya/mocksqlalchemy/tarball/0.1.1',
+      download='https://github.com/levisaya/mocksqlalchemy/tarball/0.1.2',
       zip_safe=False,
       packages=find_packages(),
      )
